@@ -1,0 +1,19 @@
+soroban-poseidon (vendored)
+
+Upstream repository: https://github.com/stellar/rs-soroban-poseidon
+Release vendored:    28.0.0 (crates.io), upstream commit 521da986541843a5cd1a94f36f681f14bdad3b90
+Licence:             Apache-2.0 (see LICENSE in this directory)
+
+This directory is the published soroban-poseidon 28.0.0 crate (Cargo.toml,
+LICENSE, README.md and src/) as downloaded from crates.io, with one change:
+
+    the soroban-sdk requirement (dependencies and dev-dependencies) is
+    "29.0.1" instead of "28.0.0".
+
+No upstream release of soroban-poseidon accepts soroban-sdk 29. The workspace
+uses this copy through a path dependency in the root Cargo.toml. The directory
+is excluded from the workspace (so workspace clippy, tests and coverage do not
+cover it) and ignored by the root rustfmt.toml (so the source stays identical
+to the published crate). Remove this directory, its `exclude` entry and the
+rustfmt `ignore`, and point `soroban-poseidon` back at crates.io, once
+upstream publishes a release that accepts soroban-sdk 29.
