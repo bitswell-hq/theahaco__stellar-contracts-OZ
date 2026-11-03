@@ -8,6 +8,8 @@ use_small_heuristics = "Max"
 use_field_init_shorthand = true
 wrap_comments = true
 format_code_in_doc_comments = true
+# vendored third-party source keeps its upstream formatting
+ignore = ["vendor"]
 
 
 # most of these are unstable, so we enable them
